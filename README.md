@@ -1,4 +1,4 @@
-# AngularDarkMode
+# Angular Material Dark Mode
 
 This is a companion demo app showing dark mode in Angular material. 
 
