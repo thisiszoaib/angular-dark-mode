@@ -1,0 +1,17 @@
+mat-toolbar {
+    display: flex;
+    align-items: center;
+}
+
+.flex-stretch {
+    flex: 1 0 auto;
+}
+
+.content {
+    padding: 16px;
+    min-height: 100vh;
+}
+
+mat-card {
+    max-width: 400px;
+}
