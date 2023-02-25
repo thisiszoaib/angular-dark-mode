@@ -7,9 +7,9 @@
   <mat-icon>bedtime</mat-icon>
 </mat-toolbar>
 
-<div class="content mat-app-background" fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+<div class="content mat-app-background" style="display: flex; flex-flow: row wrap;">
 
-  <div fxFlex="50">
+  <div style="flex: 1">
     <h1>Buttons</h1>
 
     <div fxLayout="row" fxLayoutGap="16px">
@@ -31,8 +31,16 @@
     <h1>Input</h1>
 
     <mat-form-field>
-      <input matInput placeholder="Enter some information">
+      <input matInput placeholder="Enter some information" />
     </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Enter a number" />
+    </mat-form-field>
+
+    <br />
 
     <br><br>
 
@@ -62,7 +70,7 @@
 
 
   </div>
-  <div fxFlex="50">
+  <div style="flex: 1">
     <h1>A card</h1>
     <mat-card class="example-card">
       <mat-card-header>

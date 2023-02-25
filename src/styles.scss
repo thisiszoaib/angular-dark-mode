@@ -1,6 +1,6 @@
-@use '~@angular/material' as mat;
+@use "@angular/material" as mat;
 
-@import "~@angular/material/theming";
+@import "@angular/material/theming";
 
 @include mat.core();
 
@@ -16,6 +16,8 @@ $angular-default-theme: mat.define-light-theme(
       accent: $angular-accent,
       warn: $angular-warn,
     ),
+    typography: mat.define-typography-config(),
+    density: 0,
   )
 );
 
@@ -28,6 +30,8 @@ $angular-dark-theme: mat.define-dark-theme(
       accent: $angular-accent,
       warn: $angular-warn,
     ),
+    typography: mat.define-typography-config(),
+    density: 0,
   )
 );
 
@@ -51,4 +55,13 @@ p {
 
 .mr-8 {
   margin-right: 8px;
+}
+
+.mdc-button {
+  margin: 10px;
+}
+
+.mdc-card,
+.mdc-dialog {
+  padding: 10px;
 }
