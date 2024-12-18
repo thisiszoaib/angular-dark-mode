@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { SampleDialogComponent } from './sample-dialog/sample-dialog.component';
 import { OverlayContainer } from '@angular/cdk/overlay';
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   @HostBinding('class') className = '';
 
-  toggleControl = new FormControl(false);
+  toggleControl = new UntypedFormControl(false);
 
   constructor(private dialog: MatDialog, private overlay: OverlayContainer) { }
 
