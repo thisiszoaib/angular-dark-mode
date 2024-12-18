@@ -5,9 +5,10 @@ import { SampleDialogComponent } from './sample-dialog/sample-dialog.component';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true
 })
 export class AppComponent implements OnInit {
   title = 'Angular material dark mode';
