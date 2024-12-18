@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { SampleDialogComponent } from './sample-dialog/sample-dialog.component';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
