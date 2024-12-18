@@ -1,14 +1,14 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { SampleDialogComponent } from './sample-dialog/sample-dialog.component';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { MatDialog } from '@angular/material/dialog';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    standalone: true
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
 })
 export class AppComponent implements OnInit {
   title = 'Angular material dark mode';
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   toggleControl = new UntypedFormControl(false);
 
-  constructor(private dialog: MatDialog, private overlay: OverlayContainer) { }
+  constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
 
   ngOnInit(): void {
     this.toggleControl.valueChanges.subscribe((darkMode) => {
@@ -32,10 +32,8 @@ export class AppComponent implements OnInit {
   }
 
   showDialog(): void {
-    this.dialog.open(SampleDialogComponent,
-      {
-        width: '500px'
-      });
+    this.dialog.open(SampleDialogComponent, {
+      width: '500px',
+    });
   }
-
 }
