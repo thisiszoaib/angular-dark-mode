@@ -1,54 +1,49 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
   Angular Dark Mode
   <div class="flex-stretch"></div>
   <mat-icon class="mr-8">brightness_5</mat-icon>
-  <mat-slide-toggle [formControl]="toggleControl" class="mr-8">
+  <mat-slide-toggle
+    [(ngModel)]="darkMode"
+    class="mr-8"
+    aria-label="Toggle dark mode"
+  >
   </mat-slide-toggle>
   <mat-icon>bedtime</mat-icon>
 </mat-toolbar>
 
-<div class="content mat-app-background" fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+<div class="content responsive-grid">
+  <div>
+    <h3>Buttons</h3>
 
-  <div fxFlex="50">
-    <h1>Buttons</h1>
+    <div class="flex-row">
+      <button mat-flat-button (click)="showDialog()">Open Dialog</button>
 
-    <div fxLayout="row" fxLayoutGap="16px">
-      <button mat-raised-button color="primary" (click)="showDialog()">
-        Open Dialog
-      </button>
+      <button class="accent" mat-flat-button>Accent button</button>
 
-      <button mat-raised-button color="accent">
-        Accent button
-      </button>
-
-      <button mat-raised-button color="warn">
-        Warn button
-      </button>
+      <button class="warn" mat-flat-button>Warn button</button>
     </div>
 
-    <br><br>
+    <br /><br />
 
-    <h1>Input</h1>
+    <h3>Input</h3>
 
     <mat-form-field>
-      <input matInput placeholder="Enter some information">
+      <input matInput placeholder="Enter some information" />
     </mat-form-field>
 
-    <br><br>
+    <br /><br />
 
-    <h1>Checkbox</h1>
+    <h3>Checkbox</h3>
 
     <mat-checkbox>Check this box!</mat-checkbox>
 
-    <br><br>
+    <br /><br />
 
-    <h1>Expansion panel</h1>
+    <h3>Expansion panel</h3>
 
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
-        <mat-panel-title>
-          This is the expansion title
-        </mat-panel-title>
+        <mat-panel-title> Expansion title </mat-panel-title>
         <mat-panel-description>
           This is a summary of the content
         </mat-panel-description>
@@ -56,25 +51,26 @@
       <p>This is the primary content of the panel.</p>
     </mat-expansion-panel>
 
-
-    <br><br>
-
-
-
+    <br /><br />
   </div>
-  <div fxFlex="50">
-    <h1>A card</h1>
-    <mat-card class="example-card">
+  <div>
+    <h3>A card</h3>
+    <mat-card class="example-card" appearance="outlined">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Shiba Inu</mat-card-title>
         <mat-card-subtitle>Dog Breed</mat-card-subtitle>
       </mat-card-header>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
       <mat-card-content>
         <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
         </p>
       </mat-card-content>
       <mat-card-actions>
@@ -83,5 +79,4 @@
       </mat-card-actions>
     </mat-card>
   </div>
-
 </div>
