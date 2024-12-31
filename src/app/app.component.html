@@ -1,14 +1,21 @@
 <mat-toolbar>
   Angular Dark Mode
   <div class="flex-stretch"></div>
-  <mat-icon class="mr-8">brightness_5</mat-icon>
-  <mat-slide-toggle
-    [(ngModel)]="darkMode"
-    class="mr-8"
-    aria-label="Toggle dark mode"
-  >
-  </mat-slide-toggle>
-  <mat-icon>bedtime</mat-icon>
+  <button mat-icon-button [mat-menu-trigger-for]="themeMenu">
+    <mat-icon>{{ selectedTheme()?.icon }}</mat-icon>
+  </button>
+  <mat-menu #themeMenu="matMenu">
+    @for (theme of themes(); track theme.name) {
+    <button
+      [class.selected-theme]="selectedTheme().name === theme.name"
+      mat-menu-item
+      (click)="appTheme.set(theme.name)"
+    >
+      <mat-icon>{{ theme.icon }}</mat-icon>
+      <span>{{ theme.name | titlecase }}</span>
+    </button>
+    }
+  </mat-menu>
 </mat-toolbar>
 
 <div class="content responsive-grid">
