@@ -1,7 +1,6 @@
 @use "@angular/material" as mat;
 
 html {
-  color-scheme: light dark;
   @include mat.theme(
     (
       color: mat.$azure-palette,

@@ -12,6 +12,4 @@ import { ContentComponent } from './components/content/content.component';
   `,
   styles: ``,
 })
-export class AppComponent {
-  // Move theme-related logic to a service or keep it here and pass it to header component
-}
+export class AppComponent {}

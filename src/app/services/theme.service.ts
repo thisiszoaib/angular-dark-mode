@@ -11,18 +11,18 @@ export interface AppTheme {
 export class ThemeService {
   private appTheme = signal<'light' | 'dark' | 'system'>('system');
 
-  private themes = signal<AppTheme[]>([
+  private themes: AppTheme[] = [
     { name: 'light', icon: 'light_mode' },
     { name: 'dark', icon: 'dark_mode' },
     { name: 'system', icon: 'desktop_windows' },
-  ]);
+  ];
 
   selectedTheme = computed(() =>
-    this.themes().find((t) => t.name === this.appTheme())
+    this.themes.find((t) => t.name === this.appTheme())
   );
 
   getThemes() {
-    return this.themes();
+    return this.themes;
   }
 
   setTheme(theme: 'light' | 'dark' | 'system') {
