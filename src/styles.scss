@@ -1,10 +1,13 @@
 @use "@angular/material" as mat;
 
 html {
+  color-scheme: light dark;
+
   @include mat.theme(
     (
       color: mat.$azure-palette,
       typography: Roboto,
+      density: 0,
     )
   );
 }
@@ -29,9 +32,12 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
 }
 
 h2,

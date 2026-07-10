@@ -1,11 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialog } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatDialog } from '@angular/material/dialog';
 import { SampleDialogComponent } from '../../sample-dialog/sample-dialog.component';
 
 @Component({
@@ -19,6 +19,7 @@ import { SampleDialogComponent } from '../../sample-dialog/sample-dialog.compone
     MatCheckboxModule,
     MatExpansionModule,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <div class="content responsive-grid">
       <div>
@@ -92,28 +93,24 @@ import { SampleDialogComponent } from '../../sample-dialog/sample-dialog.compone
   styles: `
     .content {
       padding: 32px;
-      min-height: 100vh;
-    
-      background-color: var(--mat-sys-background);
-      color: var(--mat-sys-on-background);
     }
-    
+
     .responsive-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       grid-gap: 1rem;
     }
-    
+
     .flex-row {
       display: flex;
       flex-direction: row;
       gap: 1rem;
     }
-    
+
     mat-card {
       max-width: 400px;
     }
-    
+
     h3 {
       font-weight: 400;
     }

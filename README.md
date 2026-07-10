@@ -1,7 +1,16 @@
 # Angular Material Dark Mode
 
-This is a companion demo app showing dark mode in Angular material. 
+Companion demo for [Angular Material Dark Mode in 3 steps](https://zoaibkhan.com/blog/angular-material-dark-mode-in-3-steps/).
 
-Repo updated to material v19 with the new mat.theme() mixin - article due for an update.
+Updated for **Angular 22** and **Angular Material 3**, using:
 
-[Check out this article](https://zoaibkhan.com/blog/angular-material-dark-mode-in-3-steps/) on adding a dark mode in Angular material using custom themes.
+- a single `mat.theme()` mixin
+- CSS `light-dark()` tokens from Material
+- the `color-scheme` property for light / dark / system switching
+
+```bash
+npm install
+npm start
+```
+
+Want a custom Material 3 theme with dark mode built in? Try [Material Theme Builder](https://materialthemebuilder.com).

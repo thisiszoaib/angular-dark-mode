@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
 import { TitleCasePipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbar } from '@angular/material/toolbar';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
@@ -16,25 +16,26 @@ import { ThemeService } from '../../services/theme.service';
     MatMenuModule,
     TitleCasePipe,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <mat-toolbar>
       Angular Dark Mode
       <div class="flex-stretch"></div>
-      <button mat-icon-button [mat-menu-trigger-for]="themeMenu">
+      <button mat-icon-button [matMenuTriggerFor]="themeMenu">
         <mat-icon>{{ themeService.selectedTheme()?.icon }}</mat-icon>
       </button>
       <mat-menu #themeMenu="matMenu">
         @for (theme of themeService.getThemes(); track theme.name) {
-        <button
-          [class.selected-theme]="
-            themeService.selectedTheme()?.name === theme.name
-          "
-          mat-menu-item
-          (click)="themeService.setTheme(theme.name)"
-        >
-          <mat-icon>{{ theme.icon }}</mat-icon>
-          <span>{{ theme.name | titlecase }}</span>
-        </button>
+          <button
+            [class.selected-theme]="
+              themeService.selectedTheme()?.name === theme.name
+            "
+            mat-menu-item
+            (click)="themeService.setTheme(theme.name)"
+          >
+            <mat-icon>{{ theme.icon }}</mat-icon>
+            <span>{{ theme.name | titlecase }}</span>
+          </button>
         }
       </mat-menu>
     </mat-toolbar>
@@ -45,21 +46,21 @@ import { ThemeService } from '../../services/theme.service';
     mat-toolbar {
       display: flex;
       align-items: center;
-    
+
       @include mat.toolbar-overrides(
         (
           container-background-color: var(--mat-sys-primary),
           container-text-color: var(--mat-sys-on-primary),
         )
       );
-    
+
       @include mat.icon-button-overrides(
         (
           icon-color: var(--mat-sys-on-primary),
         )
       );
     }
-    
+
     .selected-theme {
       @include mat.menu-overrides(
         (
@@ -68,7 +69,7 @@ import { ThemeService } from '../../services/theme.service';
         )
       );
     }
-    
+
     .flex-stretch {
       flex: 1 0 auto;
     }
